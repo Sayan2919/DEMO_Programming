@@ -1,0 +1,35 @@
+class fraction:
+    def __init__(self,num,den):
+        self.num=num
+        self.den=den
+    #end __init__
+    def lcm(self,x,y):
+        if x > y:
+            greater = x
+        else:
+            greater = y
+        #end if
+        while(True):
+            if((greater % x == 0) and (greater % y == 0)):
+                lcm = greater
+                break
+            greater += 1
+        #end while
+        return lcm
+    #end lcm
+    def add(self, ob1):
+        den=self.lcm(self.den,ob1.den)
+        num=self.num * den/self.den + ob1.num * den/ob1.den
+        temp = fraction(num,den)
+        return temp
+    #end add
+    def display(self):
+        print(int(self.num),"/",self.den)
+    #end display
+#end class fraction
+
+ob1= fraction(2,3)
+ob2= fraction(3,4)
+ob3 = ob1.add(ob2)
+print("The addition of two")
+ob3.display()
