@@ -34,3 +34,4 @@ ob2= fraction(3,4)
 ob3 = ob1 + ob2
 print("The addition of two")
 ob3.display()
+#edited by prachi
